@@ -6,4 +6,5 @@ This is a mockup website for a nature researcher who wants to create a blog for 
 1.Svelte <br>
 2.Astro <br>
 3.Markdown <br>
+4.SCSS
 

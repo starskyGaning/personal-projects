@@ -1,0 +1,139 @@
+@use './breakpoints' as b;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap');
+
+// Font Family
+$font-family: 'Inter' , sans-serif;
+
+// Line Height
+$line-height: 120%;
+
+// Font Weight
+$font-weight-light: 300;
+$font-weight-regular: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Letter Spacing
+$letter-spacing-1: -0.03em;
+$letter-spacing-2: -0.02em;
+$letter-spacing-3: 0.01em;
+$letter-spacing-4: 0.02em;
+$letter-spacing-5: 0.03em;
+
+// Default Typescale
+$default-display-1: 77px;
+$default-display-2: 59px;
+$default-display-3: 46px;
+$default-heading-1: 35px;
+$default-heading-2: 27px;
+$default-heading-3: 21px; 
+$default-body: 16px;
+$default-caption: 12px;
+$default-sub-text: 9px;
+
+// Mobile Typescale
+$mobile-display-1: 47px;
+$mobile-display-2: 39px;
+$mobile-display-3: 33px;
+$mobile-heading-1: 27px;
+$mobile-heading-2: 23px;
+$mobile-heading-3: 19px; 
+$mobile-caption: 13px;
+$mobile-sub-text: 11px;
+
+// Mixins
+@mixin display-1{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-black;
+    letter-spacing: $letter-spacing-1;
+    font-size: $mobile-display-1;
+    @include b.MD{
+        font-size: $default-display-1;
+    }
+}
+
+@mixin display-2{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-black;
+    letter-spacing: $letter-spacing-1;
+    font-size: $mobile-display-2;
+    @include b.MD{
+        font-size: $default-display-2;
+    }
+}
+
+@mixin display-3{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-black;
+    letter-spacing: $letter-spacing-1;
+    font-size: $mobile-display-3;
+    @include b.MD{
+        font-size: $default-display-3;
+    }
+}
+
+@mixin heading-1{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-2;
+    font-size: $mobile-heading-1;
+    @include b.MD{
+        font-size: $default-heading-1;
+    }
+}
+
+@mixin heading-2{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-2;
+    font-size: $mobile-heading-2;
+    @include b.MD{
+        font-size: $default-heading-2;
+    }
+}
+
+@mixin heading-3{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-2;
+    font-size: $mobile-heading-3;
+    @include b.MD{
+        font-size: $default-heading-3;
+    }
+}
+
+@mixin body{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-regular;
+    letter-spacing: $letter-spacing-3;
+    font-size: $default-body;
+}
+
+@mixin caption{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-light;
+    letter-spacing: $letter-spacing-4;
+    font-size: $mobile-caption;
+    @include b.MD{
+        font-size: $default-caption;
+    }
+}
+
+@mixin sub-text{
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight-light;
+    letter-spacing: $letter-spacing-5;
+    font-size: $mobile-sub-text;
+    @include b.MD{
+        font-size: $default-sub-text;
+    }
+}

@@ -1,0 +1,28 @@
+---
+import PageLayout from "../resources/layouts/page/page-layout.svelte";
+import WelcomeSection from "../resources/sections/home/welcome/welcome-section.svelte";
+import BlogPreviewSection from "../resources/sections/home/blog-preview/blog-preview-section.svelte";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo/logo.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Home Page</title>
+
+		<!-- Bootstrap Minified CSS -->
+		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Bootstrap Minified JS -->
+		<script type="module" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Bootstrap Icons CSS -->
+		<link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+	</head>
+	<body>
+		<PageLayout>
+			<WelcomeSection />
+			<BlogPreviewSection />
+		</PageLayout>
+	</body>
+</html>

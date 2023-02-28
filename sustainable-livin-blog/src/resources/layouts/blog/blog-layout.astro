@@ -1,0 +1,72 @@
+---
+import BackButton from "../../../components/md-components/back-button.svelte";
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo/logo.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>About Me</title>
+
+		<!-- Bootstrap Minified CSS -->
+		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Bootstrap Minified JS -->
+		<script type="module" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Bootstrap Icons CSS -->
+		<link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <!--  -->
+
+        <!-- Style-->
+        <style lang="scss">
+            @import '../../scss/_compiler.scss';
+
+            main{
+                background-color: $primary-500;
+                .container{
+                    padding: 5rem 1rem;
+                    @include MD{
+                        padding: 15rem 0;
+                    }
+                    .upper-row{
+                        margin-bottom: 2rem;
+                        h1{
+                            @include display-1;
+                            color: $secondary-500;
+                            margin-bottom: .5rem;
+                        }
+                        .desc{
+                            @include heading-1;
+                            color: $secondary-400;
+                            margin-bottom: 2rem;
+                        }
+                        .publish-date{
+                            @include heading-3;
+                            color: $secondary-900;
+                        }
+                    }   
+                }
+            }
+        </style>
+	</head>
+	<body>
+		<main class="container-fluid">
+            <div class="container">
+                <div class="row row-cols-1">
+                    <div class="col upper-row">
+                        <h1>{frontmatter.title}</h1>
+                    <p class="desc">{frontmatter.description}</p>
+                    <p class="publish-date">{frontmatter.pubDate}</p>
+                    <slot></slot>
+                    </div>
+                    <div class="col bottom-row">
+                        <BackButton />
+                    </div>
+                </div>
+            </div>
+        </main>
+	</body>
+</html>
